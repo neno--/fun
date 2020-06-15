@@ -22,5 +22,5 @@
 
 ; todo perhaps revisit destructuring sometime later
 
-
+(let [[a b c] [1 2 3]] (println a b c))
 
