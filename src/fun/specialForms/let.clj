@@ -1,6 +1,7 @@
 (ns fun.specialForms.let)
 
 ; let defines locals aka local bindings or "particular values are said to be let bound".
+; vector [c (+ a b)] is called a binding vector
 
 (defn someFn [a b] (let [c (+ a b)] (println c)))
 (someFn 1 2)
@@ -21,6 +22,7 @@
 (let [ location 12 _ (println location) location (inc location) _ (println location)])
 
 ; todo perhaps revisit destructuring sometime later
+; destructuring means undoing the creation of the data structure
 
 (let [[a b c] [1 2 3]] (println a b c))
 
