@@ -11,6 +11,10 @@
 
 ; it is possible to have multiple arity versions
 
+(fn self-referencing-name
+  ([x] (self-referencing-name x 1))
+  ([x y] (+ x y)))
+
 ; also we can store it in a symbol
 
 (def PRINTLN (fn [x] (println (clojure.string/upper-case x))))

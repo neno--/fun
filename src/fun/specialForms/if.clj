@@ -18,10 +18,11 @@
   42)
 
 ; cond is like a smart switch
+; btw this is wrong, can you see why :)
 
 (println (let [x 4]
            (cond
-             4 "it is 4"
+             453 "it is 4"
              (> x 5) "larger than five"
              :else 42)))
 
