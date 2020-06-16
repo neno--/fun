@@ -19,4 +19,18 @@
 ; fixme: this fails
 ;(PRINTLN "hello" "how" "are")
 
-;58
+; that needs variadic (rest arguments or varargs) handling:
+
+(def variadicTest (fn [arg & rest] (println arg rest)))
+(def variadicTest1 (fn [arg & rest] (apply println arg rest)))
+
+(variadicTest "hello" "how" "are")
+(variadicTest1 "hello" "how" "are")
+
+; keyword arguments, provide default values
+
+; function literals
+
+(#(println %) "test")
+
+(println (quote #(println %)))
