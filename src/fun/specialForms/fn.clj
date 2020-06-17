@@ -38,3 +38,19 @@
 (#(println %) "test")
 
 (println (quote #(println %)))
+
+; HOFs (High Order Functions) are functions that accept other functions
+
+(def two-times
+  (fn [x]
+    (x)
+    (x)))
+
+;(two-times (println "double"))                              ; this won't work - println immediately evaluates
+;(two-times `(println "double"))                              ; this won't work - cannot invoke a list - or is it a sequence :)
+
+(def workaround (fn [] (println "workaround")))
+
+(two-times workaround)                                      ; this works
+
+; TODO: how to invoke it by passing a string name of a function? perhaps somehow with eval
