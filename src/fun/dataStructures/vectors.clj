@@ -20,3 +20,22 @@
 ; vector as a single argument
 (println (vector (range 3)))
 (println (vec (range 3)))
+
+; first and rest works
+(println (first [1 2 3]))
+(println (rest [1 2 3]))
+
+; find max element in vector with reduce
+(defn find-max [elements]
+  (reduce (fn [first second]
+            (if (> first second) first second)) elements))
+
+(println (find-max [1 3 6 3 4 10 2]))
+
+; find max element with loop
+(defn find-max-loop [_elements]
+  ((fn [[first & rest] max]
+     (if (empty? rest) (if (> first max) first max) (if (> first max) (recur rest first) (recur rest max))))
+   (rest _elements) (first _elements)))
+
+(println (find-max-loop [1 3 6 3 4 10 2]))
