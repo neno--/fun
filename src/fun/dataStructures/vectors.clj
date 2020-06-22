@@ -39,3 +39,25 @@
    (rest _elements) (first _elements)))
 
 (println (find-max-loop [1 3 6 3 4 10 2]))
+
+; factorial with reduce
+(defn fact [x]
+  (cond
+    (= x 0) 1
+    :else (reduce (fn [prev next] (* prev next)) (range 1 (+ x 1)))))
+
+(println (fact 0))
+(println (fact 1))
+(println (fact 5))
+
+; factorial with (head?) recursion
+
+(defn fact-loop [x]
+  (cond
+    (= x 0) 1
+    (= x 1) 1
+    :else (* x (fact-loop (dec x)))))
+
+(println (fact-loop 0))
+(println (fact-loop 1))
+(println (fact-loop 5))
