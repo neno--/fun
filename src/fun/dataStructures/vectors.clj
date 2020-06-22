@@ -1,6 +1,9 @@
 (ns fun.dataStructures.vectors)
 
 ; vectors are ordered
+; implemented as trees - leaf nodes are data nodes. up to 32 children.
+; vector is a function that maps to its index.
+; therefore, assoc and dissoc
 
 (println [1 2 3 4])
 (println (vector 1 2 3 4))
