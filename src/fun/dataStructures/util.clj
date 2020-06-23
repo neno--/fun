@@ -1,5 +1,4 @@
-(ns fun.dataStructures.util
-  (:import (com.sun.scenario.effect Merge)))
+(ns fun.dataStructures.util)
 
 ; COUNT
 (println (count '(1 2 3)))
