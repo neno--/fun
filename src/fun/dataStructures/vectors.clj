@@ -35,13 +35,13 @@
 
 (println (find-max [1 3 6 3 4 10 2]))
 
-; find max element with loop
-(defn find-max-loop [_elements]
+; find max element with tail recursion
+(defn find-max-tail [_elements]
   ((fn [[first & rest] max]
      (if (empty? rest) (if (> first max) first max) (if (> first max) (recur rest first) (recur rest max))))
    (rest _elements) (first _elements)))
 
-(println (find-max-loop [1 3 6 3 4 10 2]))
+(println (find-max-tail [1 3 6 3 4 10 2]))
 
 ; factorial with reduce
 (defn fact [x]
@@ -55,11 +55,21 @@
 
 ; factorial with (head?) recursion
 
-(defn fact-loop [x]
+(defn fact-recur [x]
   (cond
     (= x 0) 1
-    (= x 1) 1
-    :else (* x (fact-loop (dec x)))))
+    :else (* x (fact-recur (dec x)))))
+
+(println (fact-recur 0))
+(println (fact-recur 1))
+(println (fact-recur 5))
+
+(defn fact-loop [n]
+  (loop [x n result 1]
+    (cond
+      (= x 0) result
+      (= x 1) result
+      :else (recur (dec x) (* result x)))))
 
 (println (fact-loop 0))
 (println (fact-loop 1))
