@@ -2,6 +2,7 @@
 
 ; vectors are ordered
 ; implemented as trees - leaf nodes are data nodes. up to 32 children.
+; no they are TRIES that use structural changes (for immutability)
 ; vector is a function that maps to its index.
 ; therefore, assoc and dissoc
 
