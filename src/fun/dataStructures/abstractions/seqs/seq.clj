@@ -1,7 +1,9 @@
-(ns fun.dataStructures.seq)
+(ns fun.dataStructures.abstractions.seqs.seq)
 
 ; SEQ is something that implements ISeq interface
 ; lists and vectors are NOT seqs themselves
+
+; here seqs are created from existing data structures
 
 (println (= (seq '(1 2 3)) [1 2 3]))
 

@@ -1,5 +1,6 @@
-(ns fun.dataStructures.lazy)
+(ns fun.dataStructures.abstractions.seqs.lazy)
 
+; here seqs are constructed
 ; lazy sequence is generated only when needed
 
 ; range
